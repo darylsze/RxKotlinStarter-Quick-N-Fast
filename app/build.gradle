@@ -1,7 +1,7 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
 // kotlin view binding for android
-apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-android-extensions"
 
 android {
     compileSdkVersion 25
@@ -17,39 +17,40 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
+    compile fileTree(dir: "libs", include: ["*.jar"])
+    androidTestCompile("com.android.support.test.espresso:espresso-core:2.2.2", {
+        exclude group: "com.android.support", module: "support-annotations"
     })
 //    sdk = android support
     compile "com.android.support:appcompat-v7:25.3.1"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    
+    compile "com.android.support.constraint:constraint-layout:1.0.2"
+
 //    imaging = glide
-    compile 'com.github.bumptech.glide:glide:4.0.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
+    compile "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
 //    networking = retrofit + okhttp + gson
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.okhttp3:okhttp:3.8.1'
-    compile 'com.google.code.gson:gson:2.8.1'
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.okhttp3:okhttp:$okhttp_version"
+    compile "com.google.code.gson:gson:$gson_version"
+    compile "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:$rxjava2_lifecycle_version"
 
 //    design pattern = rx
-    compile 'io.reactivex.rxjava2:rxjava:2.1.3'
-    compile 'io.reactivex.rxjava2:rxkotlin:2.1.0'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile "io.reactivex.rxjava2:rxjava:$rxjava2_version"
+    compile "io.reactivex.rxjava2:rxkotlin:$rxjava2_kotlin_version"
+    compile "io.reactivex.rxjava2:rxandroid:$rxjava2_android_version"
 
 //    logging = timber
-    compile 'com.jakewharton.timber:timber:4.5.1'
+    compile "com.jakewharton.timber:timber:$timber_version"
 
 //    di = kodein - Kotlin dependency injection
-    compile 'com.github.salomonbrys.kodein:kodein:4.1.0'
+    compile "com.github.salomonbrys.kodein:kodein:$kodein_version"
 
 //    view = anko
     compile "org.jetbrains.anko:anko:$anko_version"
@@ -59,10 +60,10 @@ dependencies {
     compile "org.jetbrains.anko:anko-recyclerview-v7:$anko_version"
     compile "org.jetbrains.anko:anko-support-v4:$anko_version"
 
-//    rxLifeCycle
-    compile 'com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:2.1.0'
+//    runtime permission
+    compile "com.tbruyelle.rxpermissions2:rxpermissions:$rxpermission_version"
 
-    testCompile 'junit:junit:4.12'
+    testCompile "junit:junit:4.12"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 repositories {
