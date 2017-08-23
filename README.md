@@ -1,6 +1,19 @@
 # RxKotlinArms
 New kotlin architecture for Android applications developing based on ReactiveX, integrates many open source projects( like Kodein,Rxjava2, RxKotlin, Retrofit... ),to make your developing quicker and easier. 
 
+# Functionality & Libraries
+* [Kodein](https://github.com/SalomonBrys/Kodein)
+* RxJava2
+* RxAndroid - based on RxJava2
+* Rxlifecycle - based on RxJava2
+* RxPermissions - based on RxJava2
+* Retrofit - based on RxJava2
+* Okhttp
+* Gson
+* Timber
+* Glide (version 4)
+
+
 # View binding
 Anko from Kotlin provides a large set of extension for kotlin user to build any views, create intent in fastest way. Also kotlin android binding plugins allows user to use any view without writing 'findViewById' and 'bindView' code. No butterknife or kotterknife library required from now on.
 
