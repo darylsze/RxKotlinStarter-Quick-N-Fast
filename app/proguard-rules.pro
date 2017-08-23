@@ -32,3 +32,10 @@
   **[] $VALUES;
   public *;
 }
+
+# retrofit
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+
+# kodein
+-keepattributes Signature
