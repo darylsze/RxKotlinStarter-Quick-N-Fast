@@ -7,4 +7,9 @@ Anko from Kotlin provides a large set of extension for kotlin user to build any 
 # Runtime permission
 RxPermissions provides chaining method for ReactiveX user to grant permission and result response in a single block of code. Annotation-based permission libraries are given up cause they makes huge trouble when gradle build fail, especially when projects go large....
 
-# a lot more, pending.. Under development... Do NOT use.
+# Kodein (KOtlin DEpendency INjection)
+Instead of annotation-based dagger, I use Kodein for faster development. It requires implementing kodein injector on the base activity and application, and afterwards inject any modules or components inside target. It supports both Kotlin and Java with DSL coding style.
+
+
+
+# Project still under development... Do NOT use currently.
