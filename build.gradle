@@ -8,6 +8,9 @@ buildscript {
 //        view
         anko_version = '0.10.0'
 
+//        view binding
+        rxbinding2_version = "2.0.0"
+
 //        imaging
         glide_version = "4.0.0"
 

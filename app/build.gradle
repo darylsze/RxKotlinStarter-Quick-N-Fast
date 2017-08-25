@@ -6,24 +6,85 @@ apply plugin: "kotlin-android-extensions"
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
+
     defaultConfig {
         applicationId "darylsze.rxkotlinstarter"
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
+
+    lintOptions {
+        abortOnError false
+        disable 'MissingTranslation'
+    }
+
+    dexOptions {
+        javaMaxHeapSize "6g"
+    }
+
+    signingConfigs {
+        config {
+            keyAlias ''
+            keyPassword ''
+            storeFile file('filename.jks')
+            storePassword ''
+        }
+        debugConfig {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('debug.keystore')
+            storePassword 'android'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
+        debug {
+            versionNameSuffix ".debug"
+            signingConfig signingConfigs.debugConfig
+        }
+    }
+
+
+    flavorDimensions "version"
+
+    productFlavors {
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard.cfg"
+        }
+        debug {
+            versionNameSuffix ".debug"
+            signingConfig signingConfigs.debugConfig
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/MANIFEST.MF'
+        exclude 'META-INF/rxjava.properties'
     }
 }
 
+
 dependencies {
     compile fileTree(dir: "libs", include: ["*.jar"])
+    compile 'com.android.support:multidex:1.0.0'
     androidTestCompile("com.android.support.test.espresso:espresso-core:2.2.2", {
         exclude group: "com.android.support", module: "support-annotations"
     })
@@ -37,7 +98,10 @@ dependencies {
 
 //    networking = retrofit + okhttp + gson
     compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     compile "com.squareup.okhttp3:okhttp:$okhttp_version"
+    compile "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
     compile "com.google.code.gson:gson:$gson_version"
     compile "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:$rxjava2_lifecycle_version"
 
@@ -51,6 +115,7 @@ dependencies {
 
 //    di = kodein - Kotlin dependency injection
     compile "com.github.salomonbrys.kodein:kodein:$kodein_version"
+    compile "com.github.salomonbrys.kodein:kodein-android:$kodein_version"
 
 //    view = anko
     compile "org.jetbrains.anko:anko:$anko_version"
@@ -62,6 +127,16 @@ dependencies {
 
 //    runtime permission
     compile "com.tbruyelle.rxpermissions2:rxpermissions:$rxpermission_version"
+
+//    view binding
+    compile "com.jakewharton.rxbinding2:rxbinding:$rxbinding2_version"
+    compile "com.jakewharton.rxbinding2:rxbinding-support-v4-kotlin:$rxbinding2_version"
+    compile "com.jakewharton.rxbinding2:rxbinding-appcompat-v7-kotlin:$rxbinding2_version"
+    compile "com.jakewharton.rxbinding2:rxbinding-design-kotlin:$rxbinding2_version"
+    compile "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:$rxbinding2_version"
+
+//    datetime
+    compile 'joda-time:joda-time:2.9.7'
 
     testCompile "junit:junit:4.12"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"

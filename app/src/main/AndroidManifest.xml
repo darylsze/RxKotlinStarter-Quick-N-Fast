@@ -2,19 +2,31 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="darylsze.rxkotlinstarter">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:name=".Application.MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".MainApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Demo.BasicApiCallingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Demo.AnkoViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Demo.RxViewBindingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
     </application>
