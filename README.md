@@ -1,3 +1,8 @@
+> Lastest update: 27 Aug. 2017. <br />
+> Not yet test for Android Studio 3.0 with build gradle 3.0 <br />
+> At least one issue found from Anko in Android Studio 3.0. Go to (Wiki)[https://github.com/darylsze/RxKotlinStarter-Quick-N-Fast/wiki] for details.
+
+
 # RxKotlinStarter
 New kotlin architecture for Android applications developing based on ReactiveX, integrates many open source projects( like Kodein,Rxjava2, RxKotlin, Retrofit... ),to make your developing quicker and easier. 
 
@@ -73,6 +78,9 @@ for making views, and the view result can also be extended somehow, providing fl
                                                     // wont be affected by context
                 |- ProgressDialogManager            // works same as above but is progress dialog
                 
+# Usage
+All usage, known issue(s), reminder(s) will be added into [Wiki](https://github.com/darylsze/RxKotlinStarter-Quick-N-Fast/wiki) page, please refer to it. 
+
 # License
 
 Copyright 2016, darylsze       
