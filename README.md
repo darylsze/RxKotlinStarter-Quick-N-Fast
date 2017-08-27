@@ -1,6 +1,6 @@
 > Lastest update: 27 Aug. 2017. <br />
 > Not yet test for Android Studio 3.0 with build gradle 3.0 <br />
-> At least one issue found from Anko in Android Studio 3.0. Go to (Wiki)[https://github.com/darylsze/RxKotlinStarter-Quick-N-Fast/wiki] for details.
+> At least one issue found from Anko in Android Studio 3.0. Go to [Wiki](https://github.com/darylsze/RxKotlinStarter-Quick-N-Fast/wiki) for details.
 
 
 # RxKotlinStarter
